@@ -1,0 +1,40 @@
+﻿@model MyGame.Models.PersonModel
+
+    <td>
+        @Html.DisplayFor(modelItem => @Model.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => @Model.phone_number)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => @Model.city)
+    </td>
+    <td>
+        @*<a asp-action="Edit" asp-route-id="@Model.id">Edit</a>*@
+        <form asp-action="EditPerson" asp-route-id="@Model.id" class="d-inline-block"
+              data-ajax="true"
+              data-ajax-update="#DivDetailView"
+              data-ajax-success="ShowDetailForm()">
+            <button type="submit" class="btn btn-sm btn-info ml-1">
+                Edit
+            </button>
+        </form>
+        @*<a asp-action="Details" asp-route-id="@Model.id">Details</a> |*@
+        <form asp-action="ViewPerson" asp-route-id="@Model.id" class="d-inline-block"
+              data-ajax="true"
+              data-ajax-update="#DivDetailView"
+              data-ajax-success="ShowDetailForm()">
+            <button type="submit" class="btn btn-sm btn-primary ml-1">
+                Details
+            </button>
+        </form>
+        @*<a asp-action="Delete" asp-route-id="@Model.id">Delete</a>*@
+        <form asp-action="DeletePerson" asp-route-id="@Model.id"
+              data-ajax="true" data-ajax-success="deleteItem(this)" class="d-inline-block">
+            <button type="submit" class="btn btn-sm btn-danger ml-1"
+                    onclick="return confirm('Delete confirmation for person @Model.id');">
+                Delete
+            </button>
+        </form>
+    </td>
+
