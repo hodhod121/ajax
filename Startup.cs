@@ -71,6 +71,7 @@ namespace MyGame
                pattern: "{controller=Person}/{action=Index}/{id?}");
 
             });
+            AppDbInitial.Seed(app);
         }
     }
 }

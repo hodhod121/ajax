@@ -8,8 +8,8 @@ namespace MyGame.Models
 {
     public class PersonModel
     {
-        [Key]         
-        public int id { get; set; } 
+        [Key]
+        public int id { get; set; }  
         [MaxLength(255)]
 
         public string name { get; set; } 
